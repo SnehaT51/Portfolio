@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Violet Heading with Background</title>
+    <style>
+        /* Define the CSS for the background image */
+        
+        body {
+            background: #FFFFFF;
+            color: #111010;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        /* Define the CSS for the header */
+       /* Define the CSS for the header */
+#header {
+    width: full;
+    height: 100vh;
+    background-image: url(itzme7.jpg);
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding: 10px;
+    position: relative; /* Add this */
+    z-index: -1; /* Add this */
+}
+
+/* Add a new class for the content */
+.content-container {
+    position: relative;
+    z-index: 1; /* Add this to make it appear above the background image */
+}
+
+
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%;
+    font-size: 10px;
+}
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
+
+.nav {
+    z-index: 2;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+}
+
+
+/* Center-align the navigation links */
+.nav div.main_list {
+    height: 65px;
+    display: flex;
+    justify-content: center; /* Add this */
+}
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around; /* Add this */
+}
+
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+/* Home section */
+
+/* .home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(itzme7.jpg);
+    background-position: center top;
+	background-size:cover;
+} */
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+    height: 65px;
+    display: flex;
+    justify-content: center; /* Add this */
+}
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    /* Center-align the navigation links */
+
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around; /* Add this */
+}
+
+/* Adjust the padding and spacing for the links */
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 2rem; /* Reduce the right padding */
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.4rem;
+}
+
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+
+
+
+
+
+.myH2 {
+	text-align:center;
+	font-size: 4rem;
+}
+.myP {
+	text-align: justify;
+	padding-left:15%;
+	padding-right:15%;
+	font-size: 20px;
+}
+@media all and (max-width:700px){
+	.myP {
+		padding:2%;
+	}
+}
+
+        /* Center the content div on the page */
+        .whole {
+            z-index: 1;
+            position: relative;
+            bottom: 1200px; /* Adjust the content upwards */
+            left: 50px;
+            margin: 90px;
+        }
+
+        /* Define the CSS for the content */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 20px;
+            padding-bottom: 50px;
+          
+            letter-spacing: 4px;
+        }
+
+        /* Define the CSS for the heading */
+        .violet-heading {
+            font-size: 30px;
+            color: #9400D3;
+            margin: 0;
+        }
+
+        /* Define the CSS for the name */
+        .name {
+            font-size: 50px;
+            font-weight: bold;
+            color: #111010;
+            margin: 10px 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        /* Define the CSS for the animated text */
+        .animated-text {
+            display: inline-block;
+            font-size: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typeText 3s steps(17) 0s 1 forwards, eraseText 1s steps(17) 4s 1 forwards;
+            margin: 5px 0;
+            padding-bottom: 10px;
+        }
+
+        @keyframes typeText {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes eraseText {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0;
+            }
+        }
+
+        /* Define the CSS for the "Connect with Me" box */
+        .connect-box {
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+            padding: 20px 30px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 30px;
+            background-color: #9618af;
+            color: #FFFFFF;
+        }
+        /* Style for the professional paragraph */
+/* Add styles for the "About Me" heading */
+.about-me-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000; /* Change the color to your preference */
+    margin-top: 50px; /* Adjust as needed */
+}
+/* Define the CSS for the "About Me" container */
+.about-me-container {
+    background-color: #ffffff; /* Set the background color as needed */
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    margin-right: 980px;
+    margin-top: 20px; /* Adjust the margin-top to create space between the header and "About Me" text */
+}
+
+/* Add styles for the professional paragraph */
+.professional-paragraph {
+    font-size: 17px;
+    text-align: justify;
+    padding: 20px 30px;
+    margin-left: -70px;
+    margin-top: 400px;
+    color: #333; /* Change the color to your preference */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    background-color: #fff; /* Change the background color to your preference */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    letter-spacing: 1px;
+}
+/* Style for the contact form */
+.contact-form {
+    background-color: #f5fcfd;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav class="nav"   style="display: none;" >
+        <div class="container">
+           
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">Home</a></li> <!-- Add this line -->
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <section class="home">
+    </section>
+   
+<!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+
+    <!-- Header -->
+    <div id="header">
+        
+    </div>
+    <div class="about-me-container">
+        <h2 class="about-me-heading">About Me</h2>
+        <p class="professional-paragraph">
+            <!-- Your about me content here -->
+        </p>
+    </div>
+
+    <!-- Center the content div on the page -->
+    <div class="whole">
+        <div class="content">
+            <!-- Create the heading with the "violet-heading" class -->
+            <h1 class="violet-heading">I'm</h1>
+
+            <!-- Add the name below the heading -->
+            <p class="name">Rahul Krishna</p>
+
+            <!-- Add the animated text with ID for JavaScript control -->
+            <p><span class="animated-text" id="jobTitle"></span></p>
+
+            <!-- "Connect with Me" box -->
+            <div class="connect-box">Connect with Me</div>
+
+           
+            <!-- Add the professional paragraph here -->
+          <p class="professional-paragraph">
+            I am a dedicated and aspiring individual currently in my second year of Computer Science and Engineering at Dhirajlal Gandhi College of Technology. My passion for technology has led me to become proficient in a versatile set of programming languages and web development tools, including Java, Python, CSS, HTML, C, and JavaScript. I am committed to expanding my knowledge and skills in these domains, driven by the ambition to become a proficient web developer.
+
+            Throughout my academic journey, I have had the opportunity to work on a variety of projects, each of which has added to my practical experience and problem-solving skills. I believe in the power of technology to bring positive change, and I'm excited to use my skills to create applications that simplify everyday tasks and improve people's lives. Whether it's developing responsive websites, creating efficient algorithms, or designing user interfaces, I approach every project with enthusiasm and a determination to deliver high-quality results.
+        
+            Beyond my technical abilities, I am an effective communicator and a collaborative team player. I thrive in dynamic and fast-paced environments, and I'm always eager to learn and adapt to emerging technologies. I have a keen eye for detail, ensuring that the work I produce is not only functional but also aesthetically pleasing.
+        
+            My journey in the world of technology has only just begun, and I'm enthusiastic about the possibilities and challenges that lie ahead. I look forward to contributing my skills and knowledge to innovative projects, and I am dedicated to continuous self-improvement in this ever-evolving field. This passion for technology drives me to explore, innovate, and create with the goal of making a positive impact on the digital world.
+</p>
+
+</div>
+
+
+        </div>
+    </div>
+
+    <script>
+        const jobTitles = ["Web Developer", "Video Editor"];
+        const animatedText = document.getElementById("jobTitle");
+        let currentIndex = 0;
+
+        function changeJobTitle() {
+            animatedText.innerHTML = jobTitles[currentIndex];
+            currentIndex = (currentIndex + 1) % jobTitles.length;
+        }
+
+        // Start the job title change and cycle every 6 seconds
+        setInterval(() => {
+            animatedText.style.animation = "none";
+            void animatedText.offsetWidth;
+            animatedText.style.animation = null;
+            changeJobTitle();
+        }, 6000);
+
+        // Initial job title change
+        changeJobTitle();
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+        // Function to show the navbar on scroll
+        function showNavbarOnScroll() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').fadeIn(); // Show the navbar
+            } else {
+                $('.nav').fadeOut(); // Hide the navbar
+            }
+        }
+
+        // Attach the showNavbarOnScroll function to the scroll event
+        $(window).scroll(showNavbarOnScroll);
+
+        // Initial call to the function to handle the initial state
+        showNavbarOnScroll();
+
+        // Your existing JavaScript code here
+        $('.navTrigger').click(function () {
+            $(this).toggleClass('active');
+            console.log("Clicked menu");
+            $("#mainListDiv").toggleClass("show_list");
+            $("#mainListDiv").fadeIn();
+        });
+    
+
+    </script>
+    <section class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="#" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+</body>
+
+</html>
